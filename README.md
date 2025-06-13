@@ -1,22 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Secure Online Test Platform Frontend
+
+This is a Next.js frontend (JavaScript, CSS) for a secure online test platform. It includes:
+
+- Organization login and dashboard
+- Student login and dashboard
+- Test-taking interface
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```sh
+   cd frontend
+   npm install
+   ```
+2. Run the development server:
+   ```sh
+   npm run dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+For backend and USB client setup, see the main project instructions.
 
 ## Learn More
 

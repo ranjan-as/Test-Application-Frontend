@@ -1,0 +1,94 @@
+/* NTA-style Home Sections CSS */
+
+.home-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  border: 1px solid #e3e6f0;
+}
+
+.home-section-col {
+  flex: 1;
+  min-width: 220px;
+}
+.home-section-col.contact {
+  flex: 2;
+  min-width: 300px;
+}
+
+.home-section-title {
+  border-left: 4px solid #005fa3;
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  color: #005fa3;
+  margin-bottom: 18px;
+}
+
+.home-section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-section-list li {
+  margin-bottom: 10px;
+}
+
+.home-section-link {
+  display: flex;
+  align-items: center;
+  color: #005fa3;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+.home-section-link:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+.home-section-link.facebook { color: #4267B2; }
+.home-section-link.facebook:hover { color: #23345d; }
+.home-section-link.twitter { color: #1DA1F2; }
+.home-section-link.twitter:hover { color: #0d8ddb; }
+.home-section-link.youtube { color: #FF0000; }
+.home-section-link.youtube:hover { color: #b30000; }
+.home-section-link.playstore { color: #34A853; }
+.home-section-link.playstore:hover { color: #257a3a; }
+.home-section-link.appstore { color: #000; }
+.home-section-link.appstore:hover { color: #444; }
+
+.home-contact-address {
+  font-style: normal;
+  font-size: 15px;
+  color: #222;
+  line-height: 1.7;
+}
+.home-contact-row {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+.home-contact-row a {
+  color: #005fa3;
+  text-decoration: none;
+}
+
+.footer-nta {
+  background: #003366;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}

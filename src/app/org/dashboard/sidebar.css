@@ -1,0 +1,37 @@
+/* This file is now unused. Sidebar styles are in ../../css/TestSidebar.css */
+
+.test-sidebar {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.test-sidebar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+.test-sidebar-box {
+  padding: 10px;
+  background-color: #ccc;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.test-sidebar-box.active {
+  background-color: #28a745;
+  color: white;
+}
+.test-sidebar-submitBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
