@@ -26,8 +26,7 @@ export default function ContactInfo() {
             className="bi bi-envelope-fill"
             style={{ color: "#005fa3", marginRight: 6 }}
           ></i>
-          <b>Email:</b>{" "}
-          <a href="mailto:genadmin@nta.ac.in">genadmin@nta.ac.in</a>
+          <b>Email:</b> <a href="mailto:genadmin@nta.ac.in">admin@ntp.ac.in</a>
         </span>
         <span className="home-contact-row">
           <i

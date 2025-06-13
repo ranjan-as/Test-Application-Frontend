@@ -2,13 +2,20 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import TestSelect from "../../components/Test/TestSelect";
+import "../../components/Test/TestSelect.css";
 
 // Student Dashboard Page
 export default function StudentDashboard() {
   const [tests, setTests] = useState([]);
-  const [studentEmail, setStudentEmail] = useState(""); // TODO: Replace with real auth
   const [message, setMessage] = useState("");
   const router = useRouter();
+  // Hydration-safe state for client-only code
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:4000/api/student/tests")
@@ -26,46 +33,41 @@ export default function StudentDashboard() {
     }
   }, [router]);
 
-  const handleTakeTest = (testId) => {
-    router.push(`/test/${testId}`);
+  // Fetch student email from localStorage/session
+  const [studentEmail, setStudentEmail] = useState("");
+  useEffect(() => {
+    const email = localStorage.getItem("studentEmail") || "";
+    setStudentEmail(email);
+  }, []);
+
+  const handleTakeTest = (test) => {
+    router.push(`/test/${test.id}`);
   };
 
   return (
-    <main style={{ maxWidth: 600, margin: "2rem auto" }}>
+    <main style={{ maxWidth: 700, margin: "2rem auto" }}>
       <h1>Student Dashboard</h1>
-      <button
-        style={{ float: "right", marginBottom: 16 }}
-        onClick={() => {
-          localStorage.clear();
-          window.location.replace("/student/login");
-        }}
-      >
-        Logout
-      </button>
-      <input
-        type="email"
-        placeholder="Student Email"
-        value={studentEmail}
-        onChange={(e) => setStudentEmail(e.target.value)}
-        style={{ marginBottom: 16 }}
-      />
+      {isClient && (
+        <button
+          style={{ float: "right", marginBottom: 16 }}
+          onClick={() => {
+            localStorage.clear();
+            window.location.replace("/student/login");
+          }}
+        >
+          Logout
+        </button>
+      )}
+      {/* Show student email if available */}
+      {studentEmail && (
+        <div style={{ marginBottom: 16, fontWeight: 500 }}>
+          Email: {studentEmail}
+        </div>
+      )}
       {message && (
         <div style={{ color: "green", margin: "1rem 0" }}>{message}</div>
       )}
-      <h2>Available Tests</h2>
-      <ul>
-        {tests.map((t) => (
-          <li key={t.id}>
-            {t.name}
-            <button
-              style={{ marginLeft: 12 }}
-              onClick={() => handleTakeTest(t.id)}
-            >
-              Take Test
-            </button>
-          </li>
-        ))}
-      </ul>
+      <TestSelect tests={tests} onSelect={handleTakeTest} />
     </main>
   );
 }

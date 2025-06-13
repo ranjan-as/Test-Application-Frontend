@@ -1,7 +1,7 @@
 import React from "react";
 import "./instructions.css";
 
-export default function TestInstructions() {
+export default function TestInstructions({ onAcknowledge }) {
   return (
     <div className="nta-instructions-container">
       <h2 className="nta-instructions-title">General Instructions</h2>
@@ -16,7 +16,9 @@ export default function TestInstructions() {
         <li>For any technical issues, contact your test administrator.</li>
       </ol>
       <div className="nta-instructions-actions">
-        <button className="nta-instructions-btn">I have read and understood the instructions</button>
+        <button className="nta-instructions-btn" onClick={onAcknowledge}>
+          I have read and understood the instructions
+        </button>
       </div>
     </div>
   );

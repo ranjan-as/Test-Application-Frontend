@@ -45,6 +45,7 @@ export default function StudentLogin() {
       // Save sessionId to localStorage for dashboard auth
       if (data.student) {
         localStorage.setItem("studentSessionId", email);
+        localStorage.setItem("studentEmail", email); // Store email for dashboard and test pages
         setSuccess("Login successful! Redirecting to dashboard...");
         setTimeout(() => router.replace("/student/dashboard"), 1000);
       } else {

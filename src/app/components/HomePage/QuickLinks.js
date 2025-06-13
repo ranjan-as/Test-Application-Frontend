@@ -37,7 +37,7 @@ export default function QuickLinks() {
               className="bi bi-arrow-right-circle"
               style={{ marginRight: 8 }}
             ></i>{" "}
-            NTA Registration and MoA
+            NTP Registration
           </a>
         </li>
         <li>
